@@ -8,36 +8,57 @@ h2 {
     color: rgb( 136, 22, 216)
 }
 
-.top-card {
+
+
+
+.center-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.shuffle {
+    border-radius: 50%;
+    padding-top: 34px;
+    font-size: 20px;
+    background-color: rgba(229, 103, 47);
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border : solid white 1px; 
+    /* background-image: url('images/star.png'); */
+}
+
+
+
+.lives {
+
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 30px;
+    /* background-color: rgba(229, 103, 47); */
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border : solid white 1px;
+
+}
+
+h2 {
+    font-size: 18px;
+    text-align: center;
+}
+
+.top {
     display: flex;
     justify-content: center;
     margin: auto;
     margin-top: 100px;
     width: 150px;
     height: 200px;
-}
-
-.shuffle {
-    border-radius: 50%;
-    text-align: center;
-    padding-top: 34px;
-    font-size: 20px;
-    background-color: orange;
-    width: 100px;
-    height: 100px;
-    margin: auto;
-}
-
-
-.lives {
-    border-radius: 50%;
-    text-align: center;
-    padding-top: 30px;
-    font-size: 20px;
-    background-color: orange;
-    width: 100px;
-    height: 100px;
-    margin: auto;
 }
 
 .first-card {
@@ -57,13 +78,11 @@ h2 {
 }
 
 .third-card {
-
     display: flex;
     justify-content: center;
     margin: auto;
     width: 150px;
     height: 200px;
-
 }
 
 .fourth-card {
@@ -74,5 +93,14 @@ h2 {
     height: 200px;
 }
 
+.card {
 
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 150px;
+    height: 200px;
+    visibility: hidden;
+
+}
 
