@@ -1,7 +1,10 @@
 body {
   
-  background-image: url('https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1123&q=80')
+    background-image: url('https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1123&q=80');
+    background-size: center;
 }
+
+
 
 h2 {
     font-family: Impact, 'Arial Narrow Bold', sans-serif;
@@ -28,6 +31,19 @@ h2 {
     height: 100px;
     margin: auto;
     border : solid white 1px; 
+    /* background-image: url('images/star.png'); */
+}
+
+.placard {
+    border-radius: 20%;
+    padding-top: 40px;
+    font-size: 20px;
+    background-color: rgba(229, 103, 47);
+    background-color: white;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    margin-top: 10px;
     /* background-image: url('images/star.png'); */
 }
 
@@ -64,6 +80,7 @@ h2 {
 .first-card {
     display: flex;
     justify-content: center;
+    margin-top: 10px;
     margin: auto;
     width: 150px;
     height: 200px;
@@ -72,6 +89,7 @@ h2 {
 .second-card {
     display: flex;
     justify-content: center;
+    margin-top: 10px;
     margin: auto;
     width: 150px;
     height: 200px;
@@ -80,6 +98,7 @@ h2 {
 .third-card {
     display: flex;
     justify-content: center;
+    margin-top: 10px;
     margin: auto;
     width: 150px;
     height: 200px;
@@ -88,19 +107,31 @@ h2 {
 .fourth-card {
     display: flex;
     justify-content: center;
+    margin-top: 10px;
     margin: auto;
     width: 150px;
     height: 200px;
 }
 
-.card {
 
+
+#over{
+    display: flex;
+    justify-content: center;
+    height: 600%;
+
+}
+
+.player {
     display: flex;
     justify-content: center;
     margin: auto;
-    width: 150px;
-    height: 200px;
-    visibility: hidden;
 
 }
+
+
+
+
+
+
 

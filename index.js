@@ -3,9 +3,11 @@ let secondCard = document.querySelector('.second-card');
 let thirdCard = document.querySelector('.third-card');
 let fourthCard = document.querySelector('.fourth-card');
 let topCard = document.querySelector('.top');
-let points = document.querySelector('.points').textContent;
+let points = document.querySelector('.points')
+let score = document.querySelector('.score')
+// let over = document/querySelector('.over');
 
-
+// .textContent;
 
 let shuffle = document.querySelector('.shuffle');
 
@@ -76,22 +78,39 @@ let cards = [
     }
 ]
 
+let shuffledCards 
+let shuffledTopCard 
 
   
 shuffle.addEventListener('click', () => {
-    let shuffledCards = shuffleCards([...cards])
-    let shuffledTopCard = shuffleTopCard([...cards])
+    shuffledCards = shuffleCards([...cards])
+    shuffledTopCard = shuffleTopCard([...cards])
+
     firstCard.src = shuffledCards[0].img
     secondCard.src = shuffledCards[1].img
     thirdCard.src = shuffledCards[2].img
     fourthCard.src = shuffledCards[3].img
     topCard.src = [shuffledTopCard][0].img
-    console.log(topCard)
-     // console.log(firstCard)
-    
-})  
 
-// 
+    //lives
+    let lives = Number(points.innerText)
+        if (lives > 0){
+        lives -- 
+        } else if (lives === 0){
+
+        const img = document.createElement("img");  
+        img.src = 'images/over.jpg';
+        const src = document.getElementById("over");
+        src.appendChild(img)
+        // src.appendChild(img);
+        // src.parentNode(img);
+
+        }
+        points.innerText = lives
+
+})
+
+///////////////////SHUFFLING////////////////////////////
 
 
 function shuffleTopCard(cards) {
@@ -100,11 +119,14 @@ function shuffleTopCard(cards) {
       let random = Math.floor(Math.random() * cards.length);
       shuffled.push(cards[random]);
       cards.splice(random,1);
+     
     }
     return shuffled[0]
   }
 
-  console.log(shuffleTopCard([...cards]))
+// console.log(shuffleTopCard([...cards]))
+
+
 
 
 function shuffleCards(cards) {
@@ -117,114 +139,117 @@ function shuffleCards(cards) {
     return shuffled.slice(0,4)
   }
 
+  ///////  FIRST CARD /////////////////////////////////////////////
+  /////////////////////////////////////////////////////////////////
 
 
-// let state = {
-//     firstCard : false,
-//     secondCard : false,
-//     thirdCard : false,
-//     fourthCard : false
-// }
+  firstCard.addEventListener('click', function(){
+       
+    // console.log(shuffledTopCard.name)
+    
+    if (shuffledCards[0].name === shuffledTopCard.name || shuffledCards[0].color === shuffledTopCard.color){
+        shuffledCards = shuffleCards([...cards])
+        shuffledTopCard = shuffleTopCard([...cards])
+        firstCard.src = shuffledCards[0].img
+        secondCard.src = shuffledCards[1].img
+        thirdCard.src = shuffledCards[2].img
+        fourthCard.src = shuffledCards[3].img
+        topCard.src = [shuffledTopCard][0].img
 
-// function showCards(){
-//     document.querySelector('#myCards').forEach(card =>{
-//         if(state.firstCard){
-//             card.
-//         }
-//     })
-// }
+        let win = Number(score.innerText)
+        if (win >= 0 && win < 10){
+        win ++
+        } else if (win === 10){
+            window.open('https://open.spotify.com/artist/44iSvW0fck77wQAmWaDdzm?si=rNCNEId2Tfmv0wZ11sbQGg');
+            }
+            score.innerText = win
+      }
+    console.log('first card clicked')
+   
+    // console.log(typeof(shuffledCards))
+})
+
+///////////SECOND CARD /////////////////////////////////////////////////////
+
+secondCard.addEventListener('click', function(event){
+   
+    // console.log(shuffledCards[1].color)
+    
+    if (shuffledCards[1].name === shuffledTopCard.name || shuffledCards[1].color === shuffledTopCard.color){
+        shuffledCards = shuffleCards([...cards])
+        shuffledTopCard = shuffleTopCard([...cards])
+        firstCard.src = shuffledCards[0].img
+        secondCard.src = shuffledCards[1].img
+        thirdCard.src = shuffledCards[2].img
+        fourthCard.src = shuffledCards[3].img
+        topCard.src = [shuffledTopCard][0].img
+
+        let win = Number(score.innerText)
+        if (win >= 0 && win < 10){
+        win ++
+        } else if (win === 10){
+            window.open('https://open.spotify.com/artist/44iSvW0fck77wQAmWaDdzm?si=rNCNEId2Tfmv0wZ11sbQGg');
+            }
+            score.innerText = win
+      }
+    console.log('second card clicked')
+})
+
+///////////THIRD CARD /////////////////////////////////////////////////////
 
 
-// function renderPepperoni() {
-//     document.querySelectorAll('.pep').forEach(onePep => {
-//       if (state.pepperoni) {
-//         onePep.style.visibility = 'visible';
-//       } else {
-//         onePep.style.visibility = 'hidden';
-//       }
-//     });
-//   }
+thirdCard.addEventListener('click', function(){
+    
+    if (shuffledCards[2].name === shuffledTopCard.name || shuffledCards[2].color === shuffledTopCard.color){
+        shuffledCards = shuffleCards([...cards])
+        shuffledTopCard = shuffleTopCard([...cards])
+        firstCard.src = shuffledCards[0].img
+        secondCard.src = shuffledCards[1].img
+        thirdCard.src = shuffledCards[2].img
+        fourthCard.src = shuffledCards[3].img
+        topCard.src = [shuffledTopCard][0].img
+
+        let win = Number(score.innerText)
+        if (win >= 0 && win < 10){
+        win ++
+        } else if (win === 10){
+            window.open('https://open.spotify.com/artist/44iSvW0fck77wQAmWaDdzm?si=rNCNEId2Tfmv0wZ11sbQGg');
+            }
+            score.innerText = win
+      }
+
+    console.log('third card clicked')
+
+})
+
+///////////FOURTH CARD /////////////////////////////////////////////////////
 
 
+fourthCard.addEventListener('click', function(){
+    // console.log(shuffledTopCard.name) 
+    if (shuffledCards[3].name === shuffledTopCard.name || shuffledCards[3].color=== shuffledTopCard.color){
+        shuffledCards = shuffleCards([...cards])
+        shuffledTopCard = shuffleTopCard([...cards])
+        firstCard.src = shuffledCards[0].img
+        secondCard.src = shuffledCards[1].img
+        thirdCard.src = shuffledCards[2].img
+        fourthCard.src = shuffledCards[3].img
+        topCard.src = [shuffledTopCard][0].img
 
+        let win = Number(score.innerText)
+        if (win >= 0 && win < 10){
+        win ++
+        } else if (win === 10){
+            window.open('https://open.spotify.com/artist/44iSvW0fck77wQAmWaDdzm?si=rNCNEId2Tfmv0wZ11sbQGg');
+            }
+            score.innerText = win
+      }
+    console.log('fourth card clicked')
 
-
-
-
-
-
-// console.log(cards[1].name);
+})
 
 
  
-//   shuffleCards(cards)
-
-
-
-
-
-// firstCard.addEventListener('click', function(){
-//     console.log('first card clicked')
-// })
-
-
-// secondCard.addEventListener('click', function(){
-//     console.log('second card clicked')
-// })
-
-// thirdCard.addEventListener('click', function(){
-//     console.log('third card clicked')
-
-// })
-
-// fourthCard.addEventListener('click', function(){
-//     console.log('fourth card clicked')
-
-// })
-
-  //
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-//   const cards = [1,2,3,4,5,6,7,8]
-  
-//   const shuffleCards = shuffleCards(cards)
-  
-//   shuffleCards(cards).slice(0,4)
-  
-//   console.log(shuffleCards.slice(0,-4))const cards = [1,2,3,4,5,6,7,8]
-
-
-// function shuffleCards(cards) {
-//     let shuffled = [];
-//     while (cards.length > 0) {
-//       let random = Math.floor(Math.random() * cards.length);
-//       shuffled.push(cards[random]);
-//       cards.splice(random,1);
-//     }
-//     return shuffled
-//   }
-  
-  
-//   const cards = [1,2,3,4,5,6,7,8]
-  
-//   const shuffleCards = shuffleCards(cards)
-  
-//   shuffleCards(cards).slice(0,4)
-  
-//   console.log(shuffleCards.slice(0,-4))
-
-
 
 
 
