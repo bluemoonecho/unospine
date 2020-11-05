@@ -5,9 +5,14 @@ let fourthCard = document.querySelector('.fourth-card');
 let topCard = document.querySelector('.top');
 let points = document.querySelector('.points')
 let score = document.querySelector('.score')
-// let over = document/querySelector('.over');
+let start = document.getElementById('open');
+let game = document.getElementById('game')
+let counter = document.querySelector('.counter')
+let over = document.getElementById('over');
 
 // .textContent;
+
+console.log(counter)
 
 let shuffle = document.querySelector('.shuffle');
 
@@ -78,6 +83,17 @@ let cards = [
     }
 ]
 
+/////START ///////////////////////////////////////////////////////////
+
+
+start.addEventListener('click', () => {
+    console.log('start card clicked')
+     start.style.display = "none"
+     game.style.display = "block"
+})
+
+////////////////// SHUFFELE ///////////////////////////////////////////
+
 let shuffledCards 
 let shuffledTopCard 
 
@@ -102,6 +118,9 @@ shuffle.addEventListener('click', () => {
         img.src = 'images/over.jpg';
         const src = document.getElementById("over");
         src.appendChild(img)
+        over.style.display = "block"
+        start.style.display = "none";
+
         // src.appendChild(img);
         // src.parentNode(img);
 
@@ -249,6 +268,37 @@ fourthCard.addEventListener('click', function(){
 })
 
 
+//////////////  TIMER /////////////////
+
+
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+        if (timer === 0){
+            over.style.display = "block"
+            start.style.display = "none";
+
+            
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    var thirtySeconds = 40,
+        display = document.querySelector('#time');
+    startTimer(thirtySeconds, display);
+};
  
 
 

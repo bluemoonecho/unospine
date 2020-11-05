@@ -1,17 +1,19 @@
 body {
+    background-color: black;
   
-    background-image: url('https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1123&q=80');
-    background-size: center;
 }
-
-
 
 h2 {
     font-family: Impact, 'Arial Narrow Bold', sans-serif;
     color: rgb( 136, 22, 216)
 }
 
-
+h3 {
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+}
 
 
 .center-btn {
@@ -30,9 +32,18 @@ h2 {
     width: 100px;
     height: 100px;
     margin: auto;
-    border : solid white 1px; 
-    /* background-image: url('images/star.png'); */
+    border : groove yellow 5px; 
+
 }
+
+
+/* .star {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    z-index: -1;
+
+} */
 
 .placard {
     border-radius: 20%;
@@ -44,6 +55,7 @@ h2 {
     height: 150px;
     margin: auto;
     margin-top: 10px;
+    border : groove yellow 5px; 
     /* background-image: url('images/star.png'); */
 }
 
@@ -59,7 +71,7 @@ h2 {
     width: 100px;
     height: 100px;
     margin: auto;
-    border : solid white 1px;
+    border : groove yellow 5px; 
 
 }
 
@@ -72,7 +84,6 @@ h2 {
     display: flex;
     justify-content: center;
     margin: auto;
-    margin-top: 100px;
     width: 150px;
     height: 200px;
 }
@@ -117,18 +128,32 @@ h2 {
 
 #over{
     display: flex;
-    justify-content: center;
-    height: 600%;
+    justify-content: center;    
+} 
 
-}
 
 .player {
     display: flex;
     justify-content: center;
-    margin: auto;
+    margin: auto;    
 
 }
 
+#open {
+    height: 100px;
+}
+
+#game {
+    background-image: url('https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1123&q=80');
+    background-size: center;
+    display: none;
+}
+
+#over {
+    margin-top: 0;
+    display: none;
+    
+}
 
 
 
