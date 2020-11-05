@@ -35,7 +35,7 @@ let cards = [
     },
     {   name: 'Peter',
         color: 'blue',
-        img : 'images/Peter-blue.jpg'
+        img : 'images/Peter-Blue.jpg'
     },
     {   name: 'Peter',
         color: 'red',
