@@ -5,16 +5,29 @@ body {
 
 h2 {
     font-family: Impact, 'Arial Narrow Bold', sans-serif;
-    color: rgb( 136, 22, 216)
+    color: rgb( 136, 22, 216);
+    text-shadow: 0.1px white;
+    font-style: italic;
 }
 
 h3 {
     font-family: Impact, 'Arial Narrow Bold', sans-serif;
-    color: white;
-    text-align: center;
-    margin-top: 10px;
+    font-style: italic;
 }
 
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: space-between; ;
+    margin: auto;
+    padding: 5px;
+
+    color: yellow;
+    margin-top: 10px;
+        /* border-radius: 10%; */
+    /* border: groove rgb(84, 19, 138) 5px;  */
+
+}
 
 .center-btn {
     display: flex;
@@ -27,52 +40,38 @@ h3 {
     border-radius: 50%;
     padding-top: 34px;
     font-size: 20px;
-    background-color: rgba(229, 103, 47);
-    background-color: white;
+    background-image: url('./images/open.png');
     width: 100px;
     height: 100px;
     margin: auto;
     border : groove yellow 5px; 
-
 }
 
-
-/* .star {
-    width: 100px;
-    height: 100px;
-    margin: auto;
-    z-index: -1;
-
-} */
 
 .placard {
     border-radius: 20%;
     padding-top: 40px;
     font-size: 20px;
-    background-color: rgba(229, 103, 47);
-    background-color: white;
+    background-image: url('./images/open.png');
+    /* background-color: white; */
     width: 150px;
     height: 150px;
     margin: auto;
     margin-top: 10px;
     border : groove yellow 5px; 
-    /* background-image: url('images/star.png'); */
 }
 
 
-
 .lives {
-
     border-radius: 50%;
     text-align: center;
     padding-top: 30px;
     /* background-color: rgba(229, 103, 47); */
-    background-color: white;
+    background-image: url('./images/open.png');
     width: 100px;
     height: 100px;
     margin: auto;
     border : groove yellow 5px; 
-
 }
 
 h2 {
@@ -125,34 +124,32 @@ h2 {
 }
 
 
-
 #over{
     display: flex;
     justify-content: center;    
 } 
 
 
-.player {
-    display: flex;
-    justify-content: center;
-    margin: auto;    
-
-}
 
 #open {
+    display: flex;
+    justify-content: center;
     height: 100px;
+
 }
 
 #game {
     background-image: url('https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1123&q=80');
-    background-size: center;
+    background-size: cover;
     display: none;
 }
 
 #over {
-    margin-top: 0;
     display: none;
-    
+    justify-content: center;
+    align-self: center;
+    margin-top: 0;
+    background-size: cover;
 }
 
 

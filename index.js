@@ -9,10 +9,10 @@ let start = document.getElementById('open');
 let game = document.getElementById('game')
 let counter = document.querySelector('.counter')
 let over = document.getElementById('over');
+let mySound = document.getElementById('sound')
+let shuffledCards 
+let shuffledTopCard 
 
-// .textContent;
-
-console.log(counter)
 
 let shuffle = document.querySelector('.shuffle');
 
@@ -83,19 +83,21 @@ let cards = [
     }
 ]
 
-/////START ///////////////////////////////////////////////////////////
+//////////////////////START //////////////////////////////////////////
 
 
 start.addEventListener('click', () => {
     console.log('start card clicked')
      start.style.display = "none"
      game.style.display = "block"
+    var thirtySeconds = 30,
+    display = document.querySelector('#time');
+    startTimer(thirtySeconds, display);
+    mySound.play();
+    
 })
 
 ////////////////// SHUFFELE ///////////////////////////////////////////
-
-let shuffledCards 
-let shuffledTopCard 
 
   
 shuffle.addEventListener('click', () => {
@@ -114,22 +116,15 @@ shuffle.addEventListener('click', () => {
         lives -- 
         } else if (lives === 0){
 
-        const img = document.createElement("img");  
-        img.src = 'images/over.jpg';
-        const src = document.getElementById("over");
-        src.appendChild(img)
-        over.style.display = "block"
-        start.style.display = "none";
-
-        // src.appendChild(img);
-        // src.parentNode(img);
-
+        game.style.display = "none";
+        over.style.display = "flex";
+        mySound.pause();
         }
         points.innerText = lives
 
 })
 
-///////////////////SHUFFLING////////////////////////////
+///////////////////SHUFFLING FUNCTIOOOONS//////////////////////////////////////////////
 
 
 function shuffleTopCard(cards) {
@@ -142,10 +137,6 @@ function shuffleTopCard(cards) {
     }
     return shuffled[0]
   }
-
-// console.log(shuffleTopCard([...cards]))
-
-
 
 
 function shuffleCards(cards) {
@@ -286,19 +277,15 @@ function startTimer(duration, display) {
             timer = duration;
         }
         if (timer === 0){
-            over.style.display = "block"
+            over.style.display = "flex"
             start.style.display = "none";
+            mySound.pause();
 
             
         }
     }, 1000);
 }
 
-window.onload = function () {
-    var thirtySeconds = 40,
-        display = document.querySelector('#time');
-    startTimer(thirtySeconds, display);
-};
  
 
 
